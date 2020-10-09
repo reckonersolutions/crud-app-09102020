@@ -76,4 +76,15 @@ export class UserComponent implements OnInit {
     });
   }
 
+  deleteUser(event, userData){
+    this.userDataService.deleteUser(userData).subscribe((data) => {
+      console.log('user deleted', data);
+      this.userDeletedId = userData.id;
+      this.userDeleted = true;
+      setTimeout(() => {
+        this.userDeleted = false;
+      },2000)
+    });
+  }
+
 }
