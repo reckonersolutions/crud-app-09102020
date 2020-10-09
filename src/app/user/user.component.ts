@@ -55,7 +55,25 @@ export class UserComponent implements OnInit {
 
   editUser(event, data) {
     this.showEditUserForm = true;
-    this.edit
+    this.editFormId = data.Id;
+    this.editUserForm = this.fb.group({
+      id: [data.id],
+      name: [data.name],
+      username: [data.username],
+      email: [data.email]
+    });
+  }
+
+  editUserData(event, userform){
+    const userData = userform.value;
+    this.userDataService.editUser(userData).subscribe((data) => {
+      console.log('user edited', data);
+      this.userEdited = true;
+      setTimeout(() => {
+        this.userEdited = false;
+        this.showEditUserForm = false;
+      },2000);
+    });
   }
 
 }
