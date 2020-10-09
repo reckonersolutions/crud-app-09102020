@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
 
     });
     
-    this.initForm();
+    //this.initForm();
   }
 
   initForm() {
@@ -86,5 +86,6 @@ export class UserComponent implements OnInit {
       },2000)
     });
   }
+
 
 }
