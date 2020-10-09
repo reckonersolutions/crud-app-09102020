@@ -18,11 +18,31 @@ export class UserdataService {
         'Content-Type': 'application/json; charset=UTF-8'
       })
     };
+
+    return this.http.post(url, userData, httpOptions);
   }
 
-  deleteUser(userData){}
+  deleteUser(userData){
+    const url = 'https://jsonplaceholder.typicode.com/users/${userData.id';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=UTF-8'
+      })
+    };
+    
+    return this.http.delete(url, httpOptions);
+  }
 
-  editUser(userData) {}
+  editUser(userData) {
+    const url = 'https://jsonplaceholder.typicode.com/users/${userData.id';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=UTF-8'
+      })
+    };
+
+    return this.http.put(url, userData, httpOptions);
+  }
 
 
 
