@@ -4,7 +4,7 @@
       <h3>Create User:</h3>
     </div>
       <form [formGroup]="userForm" (submit)="createUser($event, userForm)">
-        <div class="form-group row">
+     <div class="form-group row">
         <label class="col-sm-3" for="name">Name:</label>
         <input class="col-sm-9" type="text" placeholder="Enter name" id="email" formControlName="name">
       </div>
@@ -21,6 +21,10 @@
         <i class="fas fa-plus"></i> Create User
       </button>
       </form>    
+
+    <div class="status" *ngIf="userCreated">
+      User Created Sucessfully.
+    </div>
   </div>
 </div>
 
@@ -84,3 +88,4 @@
     </div>
   </div>
 </div>
+

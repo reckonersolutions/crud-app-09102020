@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
 
     });
     
-    //this.initForm();
+    this.initForm();
   }
 
   initForm() {
