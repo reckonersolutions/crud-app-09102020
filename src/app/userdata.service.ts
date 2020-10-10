@@ -26,7 +26,7 @@ export class UserdataService {
   }
 
   deleteUser(userData){
-    const url = 'https://jsonplaceholder.typicode.com/users/${userData.id';
+    const url = `https://jsonplaceholder.typicode.com/users/${userData.id}`;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=UTF-8'
@@ -37,7 +37,8 @@ export class UserdataService {
   }
 
   editUser(userData) {
-    const url = 'https://jsonplaceholder.typicode.com/users/${userData.id';
+    const url = `https://jsonplaceholder.typicode.com/users/${userData.id}`;
+  
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json; charset=UTF-8'
